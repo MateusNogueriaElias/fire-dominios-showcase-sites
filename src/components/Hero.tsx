@@ -1,8 +1,6 @@
 
 import React from "react";
-import { ChevronDown } from "lucide-react";
-
-const PROJECT_COUNT = 38;
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -16,7 +14,7 @@ const Hero = () => {
         <span className="circle circle3" />
       </div>
       <div className="container mx-auto flex flex-col items-center justify-center gap-8 relative z-10">
-        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.4rem)] mb-2 leading-tight text-center text-[#333]">
+        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] mb-2 leading-tight text-center text-[#222]">
           Sites Que Impressionam
         </h1>
         <p
@@ -29,16 +27,30 @@ const Hero = () => {
         >
           Portfólio da Fire Domínios: projetos de alto impacto em design e tecnologia para web.
         </p>
-        {/* Métrica removida conforme solicitado */}
         <a
           href="#portfolio"
-          className="cta-hero-btn group transition"
+          className="cta-hero-btn group transition font-poppins font-bold flex items-center justify-center"
           style={{
+            backgroundColor: "#FF6F00",
+            color: "#fff",
+            borderRadius: "1.6rem",
+            fontWeight: 700,
+            fontSize: "1.15rem",
+            padding: "0.95rem 2.4rem",
             boxShadow: "0 6px 18px rgba(255,111,0,0.09)",
+            gap: "0.5rem",
           }}
+          onMouseOver={e =>
+            ((e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              "#FFA040")
+          }
+          onMouseOut={e =>
+            ((e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              "#FF6F00")
+          }
         >
           <span>Ver Portfólio</span>
-          <ChevronDown className="ml-2" size={24} />
+          <ArrowDown className="ml-2" size={22} />
         </a>
       </div>
       <svg
