@@ -10,10 +10,10 @@ const Hero = () => {
         relative pt-28 md:pt-36 pb-14 md:pb-20 px-3 md:px-4 w-full flex flex-col items-center justify-center text-center
         border-y border-orange-200/60 overflow-hidden shadow-md
       "
-      // Fundo degradé vermelho->amarelo solicitado
+      // Gradiente diagonal premium de #e53b01 a #feb800
       style={{
         minHeight: 360,
-        background: "linear-gradient(180deg,#e53b01 0%, #feb800 100%)",
+        background: "linear-gradient(135deg, #e53b01 0%, #ff8800 45%, #feb800 100%)",
       }}
     >
       {/* Overlay pode ser removido para não alterar o degradê principal */}
