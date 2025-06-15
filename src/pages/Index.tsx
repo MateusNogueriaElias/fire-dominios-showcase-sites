@@ -4,10 +4,12 @@ import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import Stats from "../components/Stats";
+import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
 
 const Index = () => {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-white relative overflow-x-hidden">
+      <DynamicParticlesBackground />
       <Header />
       <FloatingWhatsapp />
       <main className="pt-24">
