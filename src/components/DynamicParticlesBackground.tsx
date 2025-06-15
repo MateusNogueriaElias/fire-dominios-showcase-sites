@@ -1,12 +1,10 @@
 
 import { useCallback } from "react";
 import { loadFull } from "tsparticles";
-import { Engine, Container } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 
 const DynamicParticlesBackground = () => {
-  // @ts-ignore
-  const particlesInit = useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
@@ -17,7 +15,7 @@ const DynamicParticlesBackground = () => {
         init={particlesInit}
         options={{
           background: {
-            color: { value: "#fff2e8" }
+            color: { value: "#fff2e8" },
           },
           fpsLimit: 60,
           particles: {
@@ -25,61 +23,61 @@ const DynamicParticlesBackground = () => {
               value: 66,
               density: {
                 enable: true,
-                value_area: 900
-              }
+                value_area: 900,
+              },
             },
             color: {
-              value: ["#fc562b", "#ad2f0b", "#ffffff"]
+              value: ["#fc562b", "#ad2f0b", "#ffffff"],
             },
             shape: {
-              type: "circle"
+              type: "circle",
             },
             opacity: {
               value: 0.26,
-              random: { enable: true, minimumValue: 0.14 }
+              random: { enable: true, minimumValue: 0.14 },
             },
             size: {
               value: 2.4,
-              random: { enable: true, minimumValue: 1.1 }
+              random: { enable: true, minimumValue: 1.1 },
             },
             links: {
               enable: true,
               color: "#fc562b",
               distance: 130,
               opacity: 0.18,
-              width: 1
+              width: 1,
             },
             move: {
               enable: true,
               speed: 1.6,
               direction: "none",
-              outModes: "out"
-            }
+              outModes: "out",
+            },
           },
           interactivity: {
             events: {
               onHover: {
                 enable: true,
-                mode: "repulse"
+                mode: "repulse",
               },
               onClick: {
                 enable: true,
-                mode: "push"
+                mode: "push",
               },
-              resize: true
+              resize: true,
             },
             modes: {
               repulse: {
                 distance: 175,
-                duration: 0.32
+                duration: 0.32,
               },
               push: {
-                quantity: 3
-              }
-            }
+                quantity: 3,
+              },
+            },
           },
           retina_detect: true,
-          fullScreen: false // Mantém dentro do container fixo, não toma o <body>
+          fullScreen: false, // Mantém dentro do container fixo, não toma o <body>
         }}
       />
     </div>
