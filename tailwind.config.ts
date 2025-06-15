@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -80,27 +79,51 @@ export default {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+          from: { height: '0', opacity: '0' },
+          to: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
+          from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+          to: { height: '0', opacity: '0' },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "enter": {
+          "0%": { opacity: "0", transform: "scale(0.95) translateY(40px)" },
+          "100%": { opacity: "1", transform: "scale(1) translateY(0)" }
+        },
+        "scale-in": {
+          "0%": {
+            transform: "scale(0.92)",
+            opacity: "0"
           },
-          to: {
-            height: '0'
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1"
           }
+        },
+        "bounce-slow": {
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" }
+        },
+        "pulse": {
+          "0%,100%": { opacity: 1 },
+          "50%": { opacity: 0.65 }
         }
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'fade-in': "fade-in 0.6s cubic-bezier(.45,.05,.55,.95)",
+        'enter': "enter 0.55s cubic-bezier(.32,.72,.38,1.06)",
+        'scale-in': "scale-in 0.2s ease-out",
+        'bounce-slow': "bounce-slow 1.1s infinite",
+        'pulse': "pulse 2s cubic-bezier(.4,0,.6,1) infinite"
+      },
+      backgroundImage: {
+        'fire-gradient': "linear-gradient(90deg,#ffe4db 0%,#fc562b 48%,#ad2f0b 100%)"
       }
-    }
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
