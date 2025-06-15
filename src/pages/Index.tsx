@@ -2,8 +2,6 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
-import About from "../components/About";
-import Contact from "../components/Contact";
 
 const Index = () => {
   return (
@@ -12,8 +10,6 @@ const Index = () => {
       <main className="pt-24">
         <Hero />
         <PortfolioGrid />
-        <About />
-        <Contact />
       </main>
     </div>
   );

@@ -1,8 +1,8 @@
 
 import SiteCard from "./SiteCard";
 
-// Imagens fictícias/unsplash (depois você pode trocar por prints reais dos projetos)
-const sites = [
+// Sites WordPress
+const wpSites = [
   {
     title: "Cafeteria Aroma",
     img: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
@@ -21,6 +21,10 @@ const sites = [
     url: "https://viagemcomestilo.com",
     description: "Blog com sistema de posts, integração Instagram e layout atraente para viajantes.",
   },
+];
+
+// Sites Codados
+const customSites = [
   {
     title: "Loja TechShop",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
@@ -43,15 +47,29 @@ const sites = [
 
 const PortfolioGrid = () => (
   <section className="py-20 bg-white" id="portfolio">
-    <div className="container">
-      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center mb-12 text-fire-dark">Nosso Portfólio</h2>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {sites.map((site) => (
-          <SiteCard
-            key={site.title}
-            {...site}
-          />
-        ))}
+    <div className="container mx-auto">
+      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center mb-12 text-fire-dark">
+        Nosso Portfólio
+      </h2>
+
+      {/* Seção WordPress */}
+      <div>
+        <h3 className="text-2xl font-bold text-fire-dark mb-6 mt-10 text-center">Plataforma de Alta Performance (WordPress)</h3>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {wpSites.map((site) => (
+            <SiteCard key={site.title} {...site} />
+          ))}
+        </div>
+      </div>
+
+      {/* Seção Soluções Sob Medida */}
+      <div>
+        <h3 className="text-2xl font-bold text-fire-dark mb-6 mt-16 text-center">Soluções Sob Medida (Sites Codados)</h3>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {customSites.map((site) => (
+            <SiteCard key={site.title} {...site} />
+          ))}
+        </div>
       </div>
     </div>
   </section>
