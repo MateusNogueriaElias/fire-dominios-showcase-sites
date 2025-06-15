@@ -10,21 +10,21 @@ const Hero = () => {
         relative pt-28 md:pt-36 pb-14 md:pb-20 px-3 md:px-4 w-full flex flex-col items-center justify-center text-center
         border-y border-orange-200/60 overflow-hidden shadow-md
       "
-      // Gradiente vermelho-alaranjado intenso como fundo principal
+      // Fundo degradé vermelho->amarelo solicitado
       style={{
         minHeight: 360,
-        background: "linear-gradient(180deg,#FF6F00 0%,#ffae42 57%,#fff6e5 100%)",
+        background: "linear-gradient(180deg,#e53b01 0%, #feb800 100%)",
       }}
     >
-      {/* Overlay com gradiente suave para reforçar a cor sem pesar (opcional, pode comentar se achar excessivo) */}
-      <div
+      {/* Overlay pode ser removido para não alterar o degradê principal */}
+      {/* <div
         aria-hidden
         className="absolute z-0 left-0 top-0 w-full h-full pointer-events-none"
         style={{
           background: "radial-gradient(ellipse at 50% 0%, #FFBC67CC 0%, #FF6F0040 60%, #fff0 100%)",
           opacity: 0.5,
         }}
-      />
+      /> */}
       <div className="container mx-auto flex flex-col items-center justify-center gap-5 md:gap-6 relative z-10">
         <h1
           className="
