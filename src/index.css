@@ -1,4 +1,8 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ... keep existing code (todas as camadas, variáveis, tipografia, keyframes etc) the same ... */
 
 /* -----------------------------------
@@ -184,4 +188,3 @@
     /* ... keep existing styles the same ... */
   }
 }
-
