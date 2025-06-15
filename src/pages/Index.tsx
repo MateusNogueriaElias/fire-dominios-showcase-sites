@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
 import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
-import Stats from "../components/Stats";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import { useEffect } from "react";
 
@@ -39,20 +38,3 @@ const Index = () => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  }, []);
-
-  return (
-    <div className="w-full min-h-screen bg-white relative overflow-x-hidden">
-      <DynamicParticlesBackground />
-      <Header />
-      <FloatingWhatsapp />
-      <main className="pt-24">
-        <Hero />
-        <Stats />
-        <PortfolioGrid />
-      </main>
-    </div>
-  );
-};
-
-export default Index;
