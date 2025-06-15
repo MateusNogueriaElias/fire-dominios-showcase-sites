@@ -1,23 +1,20 @@
-
 import React from "react";
 
 /**
  * FloatingParticles - pequenas bolhas com animação CSS, fundo da hero
  */
 const FLOATING_PARTICLES_QTY = 10;
-
 const getParticles = () => {
-  // Gera propriedades random para X partículas flutuantes
   const arr = [];
   for (let i = 0; i < FLOATING_PARTICLES_QTY; i++) {
     arr.push({
       id: `particle-${i}`,
-      size: 28 + Math.random() * 44,
+      size: 22 + Math.random() * 26,
       left: Math.random() * 93 + "%",
-      top: 6 + Math.random() * 80 + "%",
-      delay: Math.random() * 7,
+      top: 8 + Math.random() * 78 + "%",
+      delay: Math.random() * 6,
       duration: 10 + Math.random() * 10,
-      opacity: 0.14 + Math.random() * 0.12,
+      opacity: 0.06 + Math.random() * 0.07,
     });
   }
   return arr;
@@ -47,4 +44,3 @@ const FloatingParticles = () => {
 };
 
 export default FloatingParticles;
-
