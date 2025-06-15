@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowDown } from "lucide-react";
 
@@ -13,7 +14,7 @@ const Hero = () => {
         <span className="circle circle3" />
       </div>
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
-        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] mb-2 leading-tight text-center text-[#222]">
+        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] mb-2 leading-tight text-center text-[#333]">
           Sites Que Impressionam
         </h1>
         <p
@@ -34,7 +35,7 @@ const Hero = () => {
           className="cta-hero-btn group transition font-poppins font-bold flex items-center justify-center mt-2"
         >
           <span>Ver Portfólio</span>
-          <ArrowDown className="ml-2" size={22} />
+          <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" size={22} />
         </a>
       </div>
       <svg
