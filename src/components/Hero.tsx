@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section
-      className="relative pt-36 pb-20 px-4 w-full flex flex-col items-center justify-center text-center"
+      className="relative pt-36 pb-20 px-4 w-full flex flex-col items-center justify-center text-center bg-slate-50 border-y border-slate-200/60"
       style={{ minHeight: 440 }}
     >
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
-        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] leading-tight text-gray-800">
+        <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] leading-tight text-slate-900">
           Sites Que Impressionam
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl text-center text-gray-600">
+        <p className="text-lg md:text-xl max-w-2xl text-center text-slate-600">
           Portfólio da Fire Domínios: projetos de alto impacto em design e tecnologia para web.
         </p>
         <Button
