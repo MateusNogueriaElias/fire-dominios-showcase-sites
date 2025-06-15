@@ -16,10 +16,6 @@ const Hero = () => {
         <p className="text-lg md:text-xl max-w-2xl text-center text-gray-600">
           Portfólio da Fire Domínios: projetos de alto impacto em design e tecnologia para web.
         </p>
-        <div className="inline-flex items-center rounded-full bg-fire-light px-4 py-1.5 text-sm font-semibold text-fire-dark ring-1 ring-inset ring-fire/10">
-          <span className="font-bold">38</span>
-          <span className="ml-1.5">projetos publicados</span>
-        </div>
         <Button
           asChild
           className="group rounded-full bg-fire px-8 py-3 text-lg font-bold text-white shadow-lg shadow-fire/20 transition-all duration-300 hover:-translate-y-1 hover:bg-fire-dark hover:shadow-xl hover:shadow-fire/30"
