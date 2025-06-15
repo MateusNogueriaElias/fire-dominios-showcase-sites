@@ -1,14 +1,12 @@
 
 import React, { useRef, useEffect } from "react";
 
-// Configurações aprimoradas
-const POINTS = 38; // Mais densidade de pontos
-const VELOCITY = 0.14;
-const CONNECTION_DIST = 153;
-
-// Carrega o logo (de forma leve e translúcida)
+// NOVA CONFIG MAIS IMPACTANTE
+const POINTS = 54; // Mais pontos
+const VELOCITY = 0.20; // Mais movimento
+const CONNECTION_DIST = 185;
 const LOGO_SRC = "/lovable-uploads/6e6349dd-0d71-47aa-a2d8-879e372772be.png";
-const LOGO_SIZE = 26; // px, para logos na rede
+const LOGO_SIZE = 28;
 
 const getRandom = (min: number, max: number) => Math.random() * (max - min) + min;
 
@@ -26,17 +24,16 @@ const colors = [
   "#feb891",    // fire claro
   "#ffae69",    // faísca
   "#ffd5be",    // brilho extra
+  "#fff7f2",    // branco fogo
 ];
 
-// Indica quais pontos terão um mini logo - 1 a cada 7 pontos, no máximo 4
-const isLogoPoint = (i: number) => i % 7 === 1 && i < 28;
+const isLogoPoint = (i: number) => i % 9 === 2 && i < 33;
 
 const DynamicNetworkBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const logoImgRef = useRef<HTMLImageElement | null>(null);
   const animationRef = useRef<number>();
 
-  // Carregar o logo
   useEffect(() => {
     const img = new window.Image();
     img.src = LOGO_SRC;
@@ -47,7 +44,7 @@ const DynamicNetworkBackground: React.FC = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     let width = window.innerWidth;
-    let height = Math.max(window.innerHeight * 0.57, 390);
+    let height = Math.max(window.innerHeight * 0.60, 440);
 
     if (canvas) {
       canvas.width = width;
@@ -56,7 +53,7 @@ const DynamicNetworkBackground: React.FC = () => {
 
     const handleResize = () => {
       width = window.innerWidth;
-      height = Math.max(window.innerHeight * 0.57, 390);
+      height = Math.max(window.innerHeight * 0.60, 440);
       if (canvas) {
         canvas.width = width;
         canvas.height = height;
@@ -64,10 +61,10 @@ const DynamicNetworkBackground: React.FC = () => {
     };
     window.addEventListener("resize", handleResize);
 
-    // Gerar pontos (alguns com logo)
+    // PONTOS GERADOS
     const points: Point[] = Array.from({ length: POINTS }).map((_, i) => ({
-      x: getRandom(40, width - 40),
-      y: getRandom(40, height - 40),
+      x: getRandom(48, width - 48),
+      y: getRandom(48, height - 48),
       vx: getRandom(-VELOCITY, VELOCITY),
       vy: getRandom(-VELOCITY, VELOCITY),
       isLogo: isLogoPoint(i),
@@ -77,27 +74,34 @@ const DynamicNetworkBackground: React.FC = () => {
       if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, width, height);
 
-      // Fundo luminoso sutil, reforçando conexão digital
-      const grad = ctx.createRadialGradient(width / 2, height * 0.55, 90, width / 2, height / 2, width * 0.7);
-      grad.addColorStop(0, "#ffe6d250");
-      grad.addColorStop(0.4, "#fc562b0a");
-      grad.addColorStop(1, "#ffffff00");
+      // FUNDO ENERGIZADO - GRADIENTE laranja
+      const grad = ctx.createRadialGradient(
+        width * 0.55, height * 0.48, 140,
+        width / 2, height / 2, width * 0.65
+      );
+      grad.addColorStop(0, "#fff5edbb");
+      grad.addColorStop(0.22, "#fc562b33");
+      grad.addColorStop(0.72, "#fc562b11");
+      grad.addColorStop(1, "#fff0");
       ctx.save();
-      ctx.globalAlpha = 0.6;
+      ctx.globalAlpha = 0.9;
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
       ctx.restore();
 
-      // Desenhar conexões
+      // CONEXÕES (LINHAS)
       points.forEach((p1, i) => {
         for (let j = i + 1; j < points.length; j++) {
           const p2 = points[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
           if (dist < CONNECTION_DIST) {
             ctx.save();
-            ctx.strokeStyle = colors[(i + j) % colors.length] + (dist < 70 ? "ee" : "55");
-            ctx.lineWidth = dist < 70 ? 2.2 : 1.1;
-            ctx.globalAlpha = dist < 78 ? 0.82 : 0.32;
+            // Mistura cor e opacidade de acordo com distância e index
+            ctx.strokeStyle = colors[(i + j) % colors.length] + (dist < 98 ? "ee" : "70");
+            ctx.lineWidth = dist < 98 ? 2.54 : 1.12;
+            ctx.shadowBlur = dist < 98 ? 16 : 8;
+            ctx.shadowColor = "#fc562b77";
+            ctx.globalAlpha = dist < 115 ? 0.94 : 0.45;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -107,11 +111,12 @@ const DynamicNetworkBackground: React.FC = () => {
         }
       });
 
-      // Desenhar pontos e logos
+      // DESENHAR PONTOS E LOGOS
       points.forEach((p, i) => {
         ctx.save();
         if (p.isLogo && logoImgRef.current) {
-          ctx.globalAlpha = 0.78;
+          // Logo em destaque responsivo
+          ctx.globalAlpha = 0.89;
           ctx.drawImage(
             logoImgRef.current,
             p.x - LOGO_SIZE / 2,
@@ -119,51 +124,61 @@ const DynamicNetworkBackground: React.FC = () => {
             LOGO_SIZE,
             LOGO_SIZE
           );
-          // Glow do logo (reforça identidade)
-          ctx.globalAlpha = 0.33;
+          // Glow forte no logo
+          ctx.globalAlpha = 0.35;
           ctx.beginPath();
-          ctx.arc(p.x, p.y, LOGO_SIZE / 1.15, 0, Math.PI * 2);
-          ctx.fillStyle = "#fc562b66";
-          ctx.shadowBlur = 27;
+          ctx.arc(p.x, p.y, LOGO_SIZE * 1.29, 0, Math.PI * 2);
+          ctx.fillStyle = "#fc562bdd";
+          ctx.shadowBlur = 36;
           ctx.shadowColor = "#fc562b";
           ctx.fill();
         } else {
-          // Pontos normais: faíscas em tons fire
+          // Pontos: grandes faíscas animadas
           ctx.beginPath();
-          ctx.arc(p.x, p.y, getRandom(3.2, 5.2), 0, Math.PI * 2);
+          ctx.arc(p.x, p.y, getRandom(5.8, 9.2), 0, Math.PI * 2);
           ctx.fillStyle = colors[i % colors.length];
-          ctx.globalAlpha = 0.80;
-          ctx.shadowColor = "#fc562b33";
-          ctx.shadowBlur = 18;
+          ctx.globalAlpha = 0.93;
+          ctx.shadowColor = "#fc562bab";
+          ctx.shadowBlur = 26;
+          ctx.fill();
+
+          // Brilho central branco
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, getRandom(2.2, 4.5), 0, Math.PI * 2);
+          ctx.fillStyle = "#fff";
+          ctx.globalAlpha = 0.28;
+          ctx.shadowBlur = 7;
+          ctx.shadowColor = "#fff";
           ctx.fill();
         }
         ctx.restore();
       });
 
-      // Brilhos extras randômicos (efeito digital)
-      for (let k = 0; k < 9; k++) {
+      // EFEITO "FAÍSCA": flashes meio aleatórios
+      for (let k = 0; k < 13; k++) {
         ctx.save();
-        ctx.globalAlpha = 0.18;
+        ctx.globalAlpha = 0.18 + Math.sin(Date.now()/800 + k) * 0.14;
         ctx.beginPath();
         ctx.arc(
           getRandom(0, width),
           getRandom(0, height),
-          getRandom(19, 33),
+          getRandom(24, 49),
           0,
           Math.PI * 2
         );
         ctx.fillStyle = colors[k % colors.length];
+        ctx.shadowBlur = 22;
+        ctx.shadowColor = "#fc562b";
         ctx.fill();
         ctx.restore();
       }
 
-      // Atualizar posições
+      // MOVIMENTO DOS PONTOS
       points.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
-        // Rebater nas bordas
-        if (p.x < 20 || p.x > width - 20) p.vx *= -1;
-        if (p.y < 20 || p.y > height - 20) p.vy *= -1;
+        if (p.x < 16 || p.x > width - 16) p.vx *= -1;
+        if (p.y < 16 || p.y > height - 16) p.vy *= -1;
       });
 
       animationRef.current = requestAnimationFrame(animate);
@@ -180,12 +195,12 @@ const DynamicNetworkBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="absolute inset-0 w-full h-full -z-20 pointer-events-none select-none opacity-90"
+      className="absolute inset-0 w-full h-[min(520px,60vh)] -z-20 pointer-events-none select-none opacity-95 transition"
       style={{
         background: "transparent",
-        minHeight: 350,
-        maxHeight: 520,
-        transition: "opacity 0.5s",
+        minHeight: 390,
+        maxHeight: 560,
+        transition: "opacity 0.35s",
       }}
     />
   );
