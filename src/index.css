@@ -153,4 +153,29 @@
   .animate-pulse {
     animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
   }
+
+  /* Gradiente animado para o Hero modernizado */
+  .hero-gradient-animate {
+    background: linear-gradient(270deg, #ffe0d0, #fff1e6, #ffe0d0);
+    background-size: 400% 400%;
+    animation: animateBackground 12s ease infinite;
+  }
+  @keyframes animateBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Animação fade + slide para entrada do Hero */
+  .fade-slide-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlide 1s ease-out forwards;
+  }
+  @keyframes fadeSlide {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
