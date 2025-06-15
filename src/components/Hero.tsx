@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section
-      className="relative pt-36 pb-20 px-4 w-full flex flex-col items-center justify-center text-center bg-slate-50 border-y border-slate-200/60"
+      className="relative pt-36 pb-20 px-4 w-full flex flex-col items-center justify-center text-center bg-orange-50/50 border-y border-orange-200/60"
       style={{ minHeight: 440 }}
     >
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
