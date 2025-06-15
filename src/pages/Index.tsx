@@ -3,8 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
-import Stats from "../components/Stats";
-// Removido: import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
+// Removido: import Stats from "../components/Stats";
 
 const Index = () => {
   return (
@@ -14,7 +13,7 @@ const Index = () => {
       <FloatingWhatsapp />
       <main className="pt-24">
         <Hero />
-        <Stats />
+        {/* <Stats /> Removido conforme solicitado */}
         <PortfolioGrid />
       </main>
     </div>
@@ -22,4 +21,3 @@ const Index = () => {
 };
 
 export default Index;
-
