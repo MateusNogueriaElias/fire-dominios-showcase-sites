@@ -154,13 +154,15 @@
     animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
   }
 
-  /* Gradiente animado para o Hero modernizado */
+  /* Gradiente animado para o Hero modernizado - cores mais intensas */
   .hero-gradient-animate {
     background: linear-gradient(
       270deg,
-      #ffe0d0 0%,
-      #fff1e6 25%,
-      #ffd5ba 60%,
+      #ffd0b3 0%,      /* laranja-claro */
+      #ffc099 18%,     /* bege-laranja */
+      #fc562b 45%,     /* laranja principal Fire */
+      #ffb997 65%,     /* laranja acobreado */
+      #fff1e6 85%,     /* branco/bege */
       #ffffff 100%
     );
     background-size: 400% 400%;

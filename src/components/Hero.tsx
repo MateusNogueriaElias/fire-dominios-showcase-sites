@@ -1,4 +1,3 @@
-
 import { ChevronDown } from "lucide-react";
 // import DynamicNetworkBackground from "./DynamicNetworkBackground"; // Mantém removido
 
@@ -66,8 +65,8 @@ const Hero = () => (
       height="95"
     >
       <path
-        fill="#fff1e6"
-        fillOpacity="0.65"
+        fill="#ffd0b3"
+        fillOpacity="0.85"
         d="M0,65 C360,120 1080,0 1440,65 L1440,95 L0,95 Z"
       />
     </svg>
@@ -75,4 +74,3 @@ const Hero = () => (
 );
 
 export default Hero;
-
