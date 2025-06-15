@@ -8,7 +8,16 @@ const Header = () => (
       </a>
       <ul className="flex gap-8 text-base font-medium text-gray-800">
         <li><a href="#portfolio" className="hover:text-fire transition">Portfólio</a></li>
-        <li><a href="#sobre" className="hover:text-fire transition">Sobre</a></li>
+        <li>
+          <a
+            href="https://firedominios.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-fire transition"
+          >
+            Site
+          </a>
+        </li>
         <li><a href="#contato" className="hover:text-fire transition">Contato</a></li>
       </ul>
     </nav>
