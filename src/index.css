@@ -156,9 +156,15 @@
 
   /* Gradiente animado para o Hero modernizado */
   .hero-gradient-animate {
-    background: linear-gradient(270deg, #ffe0d0, #fff1e6, #ffe0d0);
+    background: linear-gradient(
+      270deg,
+      #ffe0d0 0%,
+      #fff1e6 25%,
+      #ffd5ba 60%,
+      #ffffff 100%
+    );
     background-size: 400% 400%;
-    animation: animateBackground 12s ease infinite;
+    animation: animateBackground 12s ease-in-out infinite;
   }
   @keyframes animateBackground {
     0% { background-position: 0% 50%; }
@@ -169,13 +175,47 @@
   /* Animação fade + slide para entrada do Hero */
   .fade-slide-in {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlide 1s ease-out forwards;
+    transform: translateY(36px);
+    animation: fadeSlide 1.1s cubic-bezier(.58,.02,.48,1) forwards;
   }
+  /* Permitir delays específicos via inline style */
   @keyframes fadeSlide {
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Ajuste para aplicação do fade-slide-in-delay */
+  .fade-slide-in.delay-1 {
+    animation-delay: 0.15s;
+  }
+  .fade-slide-in.delay-2 {
+    animation-delay: 0.4s;
+  }
+  .fade-slide-in.delay-3 {
+    animation-delay: 0.7s;
+  }
+
+  /* SVG decorativo no rodapé da hero */
+  .hero-svg-wave {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (max-width: 640px) {
+    .hero-gradient-animate {
+      background-size: 600% 600%;
+      /* Mais área do gradiente, menos repetição */
+    }
+    .hero-svg-wave {
+      bottom: -7px;
     }
   }
 }
