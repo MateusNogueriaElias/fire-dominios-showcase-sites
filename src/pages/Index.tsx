@@ -1,3 +1,4 @@
+
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
@@ -17,7 +18,9 @@ const Index = () => {
         running = true;
         rippleSpan.classList.add('ripple-on');
         setTimeout(() => {
-          rippleSpan.classList.remove('ripple-on');
+          if (rippleSpan) {
+            rippleSpan.classList.remove('ripple-on');
+          }
           running = false;
         }, 540);
       });
@@ -38,3 +41,19 @@ const Index = () => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
+  }, []);
+
+  return (
+    <div className="w-full min-h-screen bg-white relative overflow-x-hidden">
+      <DynamicParticlesBackground />
+      <Header />
+      <FloatingWhatsapp />
+      <main className="pt-24">
+        <Hero />
+        <PortfolioGrid />
+      </main>
+    </div>
+  );
+};
+
+export default Index;
