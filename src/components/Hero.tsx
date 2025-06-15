@@ -29,10 +29,7 @@ const Hero = () => {
         >
           Portfólio da Fire Domínios: projetos de alto impacto em design e tecnologia para web.
         </p>
-        <div className="mb-2 text-center">
-          <span className="animated-counter mr-2">{PROJECT_COUNT}</span>
-          <span className="text-lg md:text-xl font-semibold" style={{ color: "#333" }}>projetos publicados</span>
-        </div>
+        {/* Métrica removida conforme solicitado */}
         <a
           href="#portfolio"
           className="cta-hero-btn group transition"
@@ -66,3 +63,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
