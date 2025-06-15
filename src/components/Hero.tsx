@@ -1,11 +1,10 @@
-
 import React from "react";
 import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
     <section
-      className="relative pt-36 pb-32 px-4 w-full flex flex-col items-center justify-center overflow-hidden bg-white z-0"
+      className="relative pt-36 pb-32 px-4 w-full flex flex-col items-center justify-center overflow-hidden z-0"
       style={{ minHeight: 480 }}
     >
       <div className="hero-bg-circles">
@@ -13,12 +12,12 @@ const Hero = () => {
         <span className="circle circle2" />
         <span className="circle circle3" />
       </div>
-      <div className="container mx-auto flex flex-col items-center justify-center gap-8 relative z-10">
+      <div className="container mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
         <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] mb-2 leading-tight text-center text-[#222]">
           Sites Que Impressionam
         </h1>
         <p
-          className="text-lg md:text-2xl max-w-2xl text-center mb-4 text-[#333]"
+          className="text-lg md:text-xl max-w-2xl text-center mb-2 text-[#333]"
           style={{
             fontFamily: "Poppins,Inter,sans-serif",
             fontWeight: 400,
@@ -27,27 +26,12 @@ const Hero = () => {
         >
           Portfólio da Fire Domínios: projetos de alto impacto em design e tecnologia para web.
         </p>
+        <p className="text-lg text-[#333]">
+          <span className="font-bold text-fire-DEFAULT">38</span> projetos publicados
+        </p>
         <a
           href="#portfolio"
-          className="cta-hero-btn group transition font-poppins font-bold flex items-center justify-center"
-          style={{
-            backgroundColor: "#FF6F00",
-            color: "#fff",
-            borderRadius: "1.6rem",
-            fontWeight: 700,
-            fontSize: "1.15rem",
-            padding: "0.95rem 2.4rem",
-            boxShadow: "0 6px 18px rgba(255,111,0,0.09)",
-            gap: "0.5rem",
-          }}
-          onMouseOver={e =>
-            ((e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              "#FFA040")
-          }
-          onMouseOut={e =>
-            ((e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-              "#FF6F00")
-          }
+          className="cta-hero-btn group transition font-poppins font-bold flex items-center justify-center mt-2"
         >
           <span>Ver Portfólio</span>
           <ArrowDown className="ml-2" size={22} />
@@ -75,4 +59,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

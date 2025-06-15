@@ -15,41 +15,41 @@ const DynamicParticlesBackground = () => {
         init={particlesInit}
         options={{
           background: {
-            color: { value: "#fff2e8" },
+            color: { value: "#ffffff" },
           },
           fpsLimit: 60,
           particles: {
             number: {
-              value: 66,
+              value: 60,
               density: {
                 enable: true,
                 value_area: 900,
               },
             },
             color: {
-              value: ["#fc562b", "#ad2f0b", "#ffffff"],
+              value: ["#FFB56B", "#FFE1BD", "#FF6F00"],
             },
             shape: {
               type: "circle",
             },
             opacity: {
-              value: 0.26,
-              random: { enable: true, minimumValue: 0.14 },
+              value: 0.2,
+              random: { enable: true, minimumValue: 0.1 },
             },
             size: {
-              value: 2.4,
-              random: { enable: true, minimumValue: 1.1 },
+              value: 2,
+              random: { enable: true, minimumValue: 1 },
             },
             links: {
               enable: true,
-              color: "#fc562b",
+              color: "#FF6F00",
               distance: 130,
-              opacity: 0.18,
+              opacity: 0.1,
               width: 1,
             },
             move: {
               enable: true,
-              speed: 1.6,
+              speed: 1,
               direction: "none",
               outModes: "out",
             },
@@ -68,8 +68,8 @@ const DynamicParticlesBackground = () => {
             },
             modes: {
               repulse: {
-                distance: 175,
-                duration: 0.32,
+                distance: 150,
+                duration: 0.3,
               },
               push: {
                 quantity: 3,

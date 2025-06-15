@@ -1,7 +1,8 @@
+
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
-import FloatingWhatsapp from "../components/FloatingWhatsapp";
+import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
 // Removido: import Stats from "../components/Stats";
 
 import { useEffect } from "react";
@@ -44,7 +45,7 @@ const Index = () => {
 
   return (
     <div className="w-full min-h-screen bg-white relative overflow-x-hidden">
-      {/* <DynamicParticlesBackground /> */}
+      <DynamicParticlesBackground />
       <Header />
       <FloatingChat />
       <main className="pt-24">
