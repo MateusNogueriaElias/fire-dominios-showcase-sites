@@ -1,3 +1,4 @@
+
 import SiteCard from "./SiteCard";
 import { Clock } from "lucide-react";
 
@@ -26,22 +27,28 @@ const wpSites = [
 // Sites Codados
 const customSites = [
   {
-    title: "Loja TechShop",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-    url: "https://lojatechshop.com",
-    description: "E-commerce completo com carrinho, gateway de pagamento e catálogo de produtos.",
+    title: "Advocacia",
+    img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+    url: "https://advogado.firedominios.com",
+    description: "Site profissional para escritório de advocacia com áreas de atuação, consulta online e agendamento de reuniões.",
   },
   {
-    title: "Personal Trainer Premium",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
-    url: "https://ptpremium.com",
-    description: "Site pessoal com agendamento de treinos, área de depoimentos e blog de saúde.",
+    title: "Bijuteria",
+    img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+    url: "https://biju.firedominios.com",
+    description: "E-commerce elegante para bijuterias com catálogo de produtos, carrinho de compras e sistema de pagamento integrado.",
   },
   {
-    title: "Advocacia Freitas",
-    img: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    url: "https://advfreitas.com",
-    description: "Site institucional elegante, destaque para áreas de atuação e contato ágil.",
+    title: "Salão de Beleza",
+    img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    url: "https://salaodebeleza.firedominios.com",
+    description: "Site moderno para salão de beleza com galeria de serviços, agendamento online e perfil da equipe profissional.",
+  },
+  {
+    title: "Veterinário",
+    img: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80",
+    url: "https://veterinario.firedominios.com",
+    description: "Clínica veterinária completa com informações sobre serviços, agendamento de consultas e dicas de cuidados com pets.",
   },
 ];
 
@@ -68,7 +75,7 @@ const PortfolioGrid = () => (
       {/* Seção Soluções Sob Medida */}
       <div>
         <h3 className="text-2xl font-bold text-gray-800 mb-6 mt-16 text-center">Soluções Sob Medida (Código)</h3>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {customSites.map((site) => (
             <SiteCard key={site.title} {...site} />
           ))}
