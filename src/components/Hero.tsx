@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,16 @@ const Hero = () => {
       "
       style={{ minHeight: 360 }}
     >
+      {/* Decorativo: Gradient de topo suave em tom laranja, igual ao exemplo */}
+      <div
+        aria-hidden
+        className="absolute z-0 left-1/2 top-0 -translate-x-1/2 w-[120vw] h-36 md:h-48 rounded-b-full pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at center, #FFE1BD 60%, #FFB56B55 90%, #fff0 100%)",
+          filter: "blur(2px)",
+          opacity: 0.78,
+        }}
+      />
       <div className="container mx-auto flex flex-col items-center justify-center gap-5 md:gap-6 relative z-10">
         <h1
           className="
@@ -58,13 +69,10 @@ const Hero = () => {
           Role para ver o portfólio completo
         </span>
       </div>
-      {/* Decoração sutil no mobile */}
-      <div
-        className="absolute left-1/2 top-0 -translate-x-1/2 w-[90vw] h-32 rounded-b-full bg-fire/10 blur-[6px] pointer-events-none"
-        aria-hidden
-      />
+      {/* Decoração sutil no mobile - removida, já coberta pelo novo fundo */}
     </section>
   );
 };
 
 export default Hero;
+
