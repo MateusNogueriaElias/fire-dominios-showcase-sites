@@ -1,4 +1,3 @@
-
 import { ExternalLink } from "lucide-react";
 
 interface SiteCardProps {
@@ -13,17 +12,14 @@ interface SiteCardProps {
 
 const SiteCard = ({ title, img, url, description }: SiteCardProps) => (
   <div className="rounded-2xl shadow-lg bg-white border flex flex-col group transition-all duration-300 transform hover:scale-[1.035] hover:shadow-2xl hover:border-fire-dark relative animate-fade-in">
-    {/* Nenhum badge de tecnologia exibido */}
+    {/* Overlay removido conforme solicitado */}
     <div className="overflow-hidden rounded-t-2xl">
       <img
         src={img}
         alt={title}
         className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-400"
       />
-      {/* Overlay animado */}
-      <div className="absolute inset-x-0 bottom-0 py-2 flex justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-fire/50 via-transparent to-transparent">
-        <span className="backdrop-blur-md px-3 py-1 rounded text-white font-semibold text-sm">+ Detalhes</span>
-      </div>
+      {/* Overlay "+ Detalhes" REMOVIDO */}
     </div>
     <div className="flex-1 p-5 flex flex-col">
       <h3 className="text-xl font-bold mb-2 font-playfair text-fire">{title}</h3>
@@ -43,4 +39,3 @@ const SiteCard = ({ title, img, url, description }: SiteCardProps) => (
 );
 
 export default SiteCard;
-
