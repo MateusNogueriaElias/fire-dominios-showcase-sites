@@ -1,5 +1,5 @@
 
-import { Mail, Whatsapp } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 
 const Contact = () => (
   <section className="py-20 bg-white border-t" id="contato">
@@ -15,7 +15,7 @@ const Contact = () => (
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-fire text-white px-6 py-3 rounded-full hover:bg-fire-dark transition font-semibold shadow"
         >
-          <Whatsapp size={22}/>
+          <MessageCircle size={22}/>
           WhatsApp
         </a>
         <a
