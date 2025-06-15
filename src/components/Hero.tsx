@@ -4,8 +4,8 @@ import DynamicNetworkBackground from "./DynamicNetworkBackground";
 
 const Hero = () => (
   <section className="relative overflow-hidden pt-36 pb-24 bg-gradient-to-br from-fire-light via-[#fff2e8] to-white min-h-[50vh] animate-fade-in">
-    {/* Fundo dinâmico de rede/conexões */}
-    <DynamicNetworkBackground />
+    {/* Fundo dinâmico de rede/conexões REMOVIDO */}
+    {/* <DynamicNetworkBackground /> */}
 
     {/* Background shapes */}
     <div
@@ -42,3 +42,4 @@ const Hero = () => (
 );
 
 export default Hero;
+
