@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -46,7 +45,16 @@ const Hero = () => {
             <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={22} />
           </a>
         </Button>
-        <span className="mt-2 text-xs text-slate-400 font-normal tracking-wide block md:inline">
+        <span
+          className="
+            mt-4 md:mt-2 text-[13px] xs:text-sm text-slate-400 font-normal tracking-wide
+            block md:inline text-center w-full
+            md:w-auto md:text-xs
+          "
+        >
+          <span className="inline md:hidden">
+            <svg className="mx-auto mb-1" width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0-4-4m4 4 4-4" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
           Role para ver o portfólio completo
         </span>
       </div>
