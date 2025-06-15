@@ -9,23 +9,11 @@ interface SiteCardProps {
   badge?: string;
 }
 
-const techBadges: Record<string, string> = {
-  "Cafeteria Aroma": "WordPress",
-  "Construtora Prime": "WordPress",
-  "Blog Viagem com Estilo": "WordPress",
-  // "Loja TechShop": "React",  // Removido badge conforme solicitado
-  "Personal Trainer Premium": "React",
-  "Advocacia Freitas": "Next.js"
-};
+// techBadges removido por não ser mais utilizado
 
 const SiteCard = ({ title, img, url, description }: SiteCardProps) => (
   <div className="rounded-2xl shadow-lg bg-white border flex flex-col group transition-all duration-300 transform hover:scale-[1.035] hover:shadow-2xl hover:border-fire-dark relative animate-fade-in">
-    {/* Badge de tecnologia (não exibe para Loja TechShop) */}
-    {techBadges[title] && title !== "Loja TechShop" && (
-      <span className="absolute right-4 top-4 bg-fire/90 text-white font-semibold text-xs px-3 py-1 rounded-full shadow-lg select-none z-10 animate-scale-in tracking-wide">
-        {techBadges[title]}
-      </span>
-    )}
+    {/* Nenhum badge de tecnologia exibido */}
     <div className="overflow-hidden rounded-t-2xl">
       <img
         src={img}
@@ -55,3 +43,4 @@ const SiteCard = ({ title, img, url, description }: SiteCardProps) => (
 );
 
 export default SiteCard;
+
