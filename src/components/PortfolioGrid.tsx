@@ -76,23 +76,46 @@ const PortfolioGrid = () => (
       </div>
 
       {/* CTA */}
-      <div className="mt-24 text-center bg-white p-12 rounded-lg shadow-sm border">
-        <h3 className="text-3xl font-bold text-center text-fire-dark mb-4">
-          Pronto para Impressionar?
-        </h3>
-        <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-8">
-          Vamos conversar sobre como a <span className="font-semibold text-fire">FireDominios</span> pode construir a solução digital ideal para o seu negócio. Agende uma conversa sem compromisso.
-        </p>
-        <a
-          href="https://wa.me/5599999999999?text=Olá,%20quero%20receber%20uma%20análise%20gratuita%20do%20meu%20site!"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-fire text-white font-semibold shadow-lg hover:bg-fire-dark transition text-lg"
-          style={{ minWidth: 300, justifyContent: "center" }}
+      <div className="mt-24 flex justify-center">
+        <div
+          className="
+            w-full max-w-sm sm:max-w-md bg-white shadow-sm border rounded-2xl px-4 py-9
+            flex flex-col items-center gap-6
+          "
         >
-          Receber Análise Gratuita
-          <MessageCircle className="ml-2" size={24} color="#fff" />
-        </a>
+          <h3 className="text-2xl xs:text-3xl font-extrabold text-fire-dark text-center mb-2 leading-snug">
+            Pronto para<br />
+            Impressionar?
+          </h3>
+          <p className="text-base xs:text-lg font-medium text-slate-700 text-center leading-relaxed">
+            Vamos conversar sobre como a{' '}
+            <span className="text-fire font-bold">FireDominios</span>
+            {' '}pode construir a solução digital ideal para o seu negócio. Agende uma conversa sem compromisso.
+          </p>
+          <a
+            href="https://wa.me/5599999999999?text=Olá,%20quero%20receber%20uma%20análise%20gratuita%20do%20meu%20site!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              mt-1 w-full
+              flex items-center justify-center gap-2
+              px-0 xs:px-2
+              py-3 xs:py-3
+              rounded-full bg-fire text-white font-bold
+              shadow-lg hover:bg-fire-dark transition
+              text-base xs:text-lg
+              min-h-[50px]
+              active:scale-[0.98]
+            "
+            style={{ minWidth: 0 }}
+          >
+            <span className="w-full text-center">Receber Análise Gratuita</span>
+            <svg className="ml-1 xs:ml-2 shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M13.5 8.5 12 7v6l4.5 2.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
