@@ -1,8 +1,12 @@
 
 import { ChevronDown } from "lucide-react";
+import DynamicNetworkBackground from "./DynamicNetworkBackground";
 
 const Hero = () => (
   <section className="relative overflow-hidden pt-36 pb-24 bg-gradient-to-br from-fire-light via-[#fff2e8] to-white min-h-[50vh] animate-fade-in">
+    {/* Fundo dinâmico de rede/conexões */}
+    <DynamicNetworkBackground />
+
     {/* Background shapes */}
     <div
       className="absolute opacity-50 blur-lg -z-10 left-[-100px] top-[-140px] w-[420px] h-[290px] bg-fire rounded-full"
