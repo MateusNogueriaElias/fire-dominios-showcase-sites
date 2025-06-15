@@ -1,5 +1,5 @@
 import SiteCard from "./SiteCard";
-import { MessageCircle } from "lucide-react";
+import { Clock } from "lucide-react";
 
 // Sites WordPress
 const wpSites = [
@@ -97,23 +97,29 @@ const PortfolioGrid = () => (
             target="_blank"
             rel="noopener noreferrer"
             className="
-              mt-1 w-full
-              flex items-center justify-center gap-2
-              px-0 xs:px-2
-              py-3 xs:py-3
-              rounded-full bg-fire text-white font-bold
-              shadow-lg hover:bg-fire-dark transition
-              text-base xs:text-lg
+              w-full
+              flex items-center justify-center
+              px-0 xs:px-4
+              py-3
+              rounded-full bg-[#FF6F00] 
+              font-bold text-white text-[17px] xs:text-lg
+              shadow-lg hover:bg-[#d45900] transition
               min-h-[50px]
               active:scale-[0.98]
+              gap-3
+              border-0
+              outline-none
+              focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF6F00]
             "
-            style={{ minWidth: 0 }}
+            style={{ minWidth: 0, boxShadow: "0 4px 18px 0 #fc562b33" }}
           >
-            <span className="w-full text-center">Receber Análise Gratuita</span>
-            <svg className="ml-1 xs:ml-2 shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M13.5 8.5 12 7v6l4.5 2.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <span className="w-full text-center block">Receber Análise Gratuita</span>
+            <Clock 
+              className="ml-2 shrink-0"
+              size={23}
+              color="#fff"
+              strokeWidth={2.3}
+            />
           </a>
         </div>
       </div>
