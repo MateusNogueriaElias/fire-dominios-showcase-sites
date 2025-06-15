@@ -11,8 +11,9 @@ export default {
   prefix: "",
   theme: {
     fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
       playfair: ["Playfair Display", "serif"],
-      sans: ['Inter', 'sans-serif'],
+      sans: ['Poppins', 'Inter', 'sans-serif'],
     },
     container: {
       center: true,
@@ -24,9 +25,9 @@ export default {
     extend: {
       colors: {
         fire: {
-          light: "#ffe4db",
-          DEFAULT: "#fc562b",
-          dark: "#ad2f0b",
+          light: "#FFE1BD",
+          DEFAULT: "#FF6F00",
+          dark: "#B35600",
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
