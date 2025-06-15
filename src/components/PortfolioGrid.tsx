@@ -1,26 +1,31 @@
-
 import SiteCard from "./SiteCard";
 import { Clock } from "lucide-react";
 
 // Sites WordPress
 const wpSites = [
   {
-    title: "Cafeteria Aroma",
-    img: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-    url: "https://exemplo-cafearoma.com",
-    description: "Site institucional moderno para cafeteria local, com cardápio online, integração WhatsApp.",
+    title: "Restaurantes",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
+    url: "https://restaurante.firedominios.com",
+    description: "Site elegante para restaurantes com cardápio digital, sistema de reservas online e galeria de pratos especiais.",
   },
   {
-    title: "Construtora Prime",
-    img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-    url: "https://construtoraprime.com",
-    description: "Landing page responsiva para construtora, foco em contato e portfólio de obras.",
+    title: "Corretores de Imóveis",
+    img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+    url: "https://corretoresdeimoveis.firedominios.com",
+    description: "Portal imobiliário completo com catálogo de propriedades, busca avançada e sistema de contato direto.",
   },
   {
-    title: "Blog Viagem com Estilo",
-    img: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    url: "https://viagemcomestilo.com",
-    description: "Blog com sistema de posts, integração Instagram e layout atraente para viajantes.",
+    title: "Personal Trainer",
+    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
+    url: "https://personaltrainers.firedominios.com",
+    description: "Site profissional para personal trainers com planos de treino, agendamento de sessões e depoimentos de clientes.",
+  },
+  {
+    title: "Nutricionista",
+    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80",
+    url: "https://nutricionismo.firedominios.com",
+    description: "Plataforma para nutricionistas com consultas online, planos alimentares personalizados e blog de dicas nutricionais.",
   },
 ];
 
