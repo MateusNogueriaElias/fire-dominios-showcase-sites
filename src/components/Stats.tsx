@@ -1,19 +1,21 @@
 
 const stats = [
-  { label: "Projetos Entregues", value: 120 },
-  { label: "Empresas Atendidas", value: 65 },
-  { label: "Avaliação Média", value: "5.0 ★" }
+  { label: "Projetos Entregues", value: 38 },
+  { label: "Empresas Atendidas", value: 25 },
+  { label: "Anos no Mercado", value: "3+" }
 ];
 
 const Stats = () => (
-  <section className="py-10 bg-gradient-to-r from-fire-light/60 to-white">
-    <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-12 items-center justify-center animate-fade-in">
-      {stats.map((stat) => (
-        <div key={stat.label} className="bg-white shadow-xl rounded-2xl px-8 py-6 flex flex-col items-center w-full md:w-1/3 border hover:scale-105 transition-transform">
-          <span className="text-4xl font-bold text-fire mb-2">{stat.value}</span>
-          <span className="text-gray-700 font-medium">{stat.label}</span>
-        </div>
-      ))}
+  <section className="py-20 bg-white">
+    <div className="container mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        {stats.map((stat) => (
+          <div key={stat.label} className="p-4">
+            <span className="text-5xl font-extrabold text-fire-DEFAULT block mb-2">{stat.value}</span>
+            <span className="text-lg text-gray-600 font-medium">{stat.label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 );

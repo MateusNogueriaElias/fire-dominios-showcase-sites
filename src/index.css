@@ -18,29 +18,6 @@ header .text-fire {
   color: #FF6F00 !important;
 }
 
-/* Círculos de fundo para hero */
-.hero-bg-circles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0; top: 0; z-index: 0;
-  pointer-events: none;
-}
-.hero-bg-circles .circle {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(48px);
-}
-.hero-bg-circles .circle1 {
-  width: 180px; height: 180px; background: #FFB56B; left: -60px; top: -60px; opacity: 0.22;
-}
-.hero-bg-circles .circle2 {
-  width: 120px; height: 120px; background: #FFE1BD; right: 5vw; top: 40px; opacity: 0.18;
-}
-.hero-bg-circles .circle3 {
-  width: 80px; height: 80px; background: #FF6F00; left: 35vw; top: -40px; opacity: 0.09;
-}
-
 /* CTA Botão */
 .cta-hero-btn {
   background: #FF6F00;
@@ -91,38 +68,8 @@ header .text-fire {
 }
 
 @media (max-width: 700px){
-  .hero-bg-circles .circle1 { width: 110px; height: 110px; left: -28px; top: -30px;}
-  .hero-bg-circles .circle2 { width: 70px; height: 70px; right: 5vw; top: 12px;}
-  .hero-bg-circles .circle3 { width: 38px; height: 38px; left: 35vw; top: -19px;}
   .cta-hero-btn { font-size: 1.01rem; padding: 0.7rem 1.6rem;}
   .animated-counter { font-size: 1.31rem;}
-}
-
-.floating-chat-btn {
-  background: #FF6F00;
-  color: #fff;
-  box-shadow: 0 6px 28px 0 rgba(255,111,0,0.20);
-  position: fixed;
-  right: 22px;
-  bottom: 26px;
-  width: 54px;
-  height: 54px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 40;
-  cursor: pointer;
-  border: none;
-  transition: background 0.18s;
-}
-.floating-chat-btn:hover {
-  background: #FFA040;
-}
-
-.floating-chat-btn svg {
-  width: 28px;
-  height: 28px;
 }
 
 body {

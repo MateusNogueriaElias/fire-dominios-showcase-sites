@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowDown } from "lucide-react";
 
@@ -8,11 +7,6 @@ const Hero = () => {
       className="relative pt-36 pb-32 px-4 w-full flex flex-col items-center justify-center overflow-hidden z-0"
       style={{ minHeight: 480 }}
     >
-      <div className="hero-bg-circles">
-        <span className="circle circle1" />
-        <span className="circle circle2" />
-        <span className="circle circle3" />
-      </div>
       <div className="container mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
         <h1 className="font-poppins font-extrabold text-[clamp(2.7rem,6vw,3.35rem)] mb-2 leading-tight text-center text-[#333]">
           Sites Que Impressionam

@@ -1,3 +1,4 @@
+
 import { ExternalLink } from "lucide-react";
 
 interface SiteCardProps {
@@ -11,7 +12,7 @@ interface SiteCardProps {
 // techBadges removido por não ser mais utilizado
 
 const SiteCard = ({ title, img, url, description }: SiteCardProps) => (
-  <div className="rounded-2xl shadow-lg bg-white border flex flex-col group transition-all duration-300 transform hover:scale-[1.035] hover:shadow-2xl hover:border-fire-dark relative animate-fade-in">
+  <div className="rounded-2xl shadow-lg bg-white border flex flex-col group transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:border-fire-dark relative animate-fade-in">
     {/* Overlay removido conforme solicitado */}
     <div className="overflow-hidden rounded-t-2xl">
       <img

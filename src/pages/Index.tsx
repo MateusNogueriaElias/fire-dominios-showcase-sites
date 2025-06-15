@@ -1,12 +1,10 @@
-
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
 import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
-// Removido: import Stats from "../components/Stats";
-
+import Stats from "../components/Stats";
+import FloatingWhatsapp from "../components/FloatingWhatsapp";
 import { useEffect } from "react";
-import FloatingChat from "../components/FloatingChat";
 
 const Index = () => {
   useEffect(() => {
@@ -47,10 +45,10 @@ const Index = () => {
     <div className="w-full min-h-screen bg-white relative overflow-x-hidden">
       <DynamicParticlesBackground />
       <Header />
-      <FloatingChat />
+      <FloatingWhatsapp />
       <main className="pt-24">
         <Hero />
-        {/* <Stats /> Removido conforme solicitado */}
+        <Stats />
         <PortfolioGrid />
       </main>
     </div>

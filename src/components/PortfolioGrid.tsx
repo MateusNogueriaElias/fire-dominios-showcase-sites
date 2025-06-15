@@ -46,21 +46,18 @@ const customSites = [
 ];
 
 const PortfolioGrid = () => (
-  <section className="py-20 bg-white" id="portfolio">
+  <section className="py-20 bg-gray-50" id="portfolio">
     <div className="container mx-auto">
-      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center mb-12 text-fire-dark">
+      <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center mb-4 text-fire-dark">
         Nosso Portfólio
       </h2>
-      <h3 className="text-xl md:text-2xl font-semibold text-center text-gray-800 mb-3">
-        Projetos que transformam presença digital em resultados de negócio.
-      </h3>
-      <p className="text-base md:text-lg text-center text-gray-700 mb-10 max-w-2xl mx-auto">
-        Navegue por nossas soluções e descubra como posicionamos marcas como a sua na vanguarda do mercado digital. Cada site que criamos, seja em WordPress de alta performance ou codificado sob medida, é uma ferramenta para o seu crescimento.
+      <p className="text-base md:text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Cada projeto é uma parceria. Navegue por nossas soluções e descubra como combinamos design e tecnologia para posicionar marcas como a sua na vanguarda do mercado digital.
       </p>
 
       {/* Seção WordPress */}
       <div>
-        <h3 className="text-2xl font-bold text-fire-dark mb-6 mt-10 text-center">Plataforma de Alta Performance (WordPress)</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-6 mt-10 text-center">Plataforma de Alta Performance (WordPress)</h3>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {wpSites.map((site) => (
             <SiteCard key={site.title} {...site} />
@@ -70,7 +67,7 @@ const PortfolioGrid = () => (
 
       {/* Seção Soluções Sob Medida */}
       <div>
-        <h3 className="text-2xl font-bold text-fire-dark mb-6 mt-16 text-center">Soluções Sob Medida (Sites Codados)</h3>
+        <h3 className="text-2xl font-bold text-gray-800 mb-6 mt-16 text-center">Soluções Sob Medida (Código)</h3>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {customSites.map((site) => (
             <SiteCard key={site.title} {...site} />
@@ -79,12 +76,12 @@ const PortfolioGrid = () => (
       </div>
 
       {/* CTA */}
-      <div className="mt-24 flex flex-col items-center justify-center gap-6">
-        <p className="text-2xl md:text-3xl font-bold text-center text-fire-dark">
-          Viu o potencial?
-        </p>
-        <p className="text-lg md:text-xl text-center text-gray-800 max-w-2xl">
-          Vamos conversar sobre como a <span className="font-semibold text-fire">FireDominios</span> pode construir a solução digital ideal para posicionar sua empresa e impulsionar suas vendas.<br />Agende uma conversa sem compromisso.
+      <div className="mt-24 text-center bg-white p-12 rounded-lg shadow-sm border">
+        <h3 className="text-3xl font-bold text-center text-fire-dark mb-4">
+          Pronto para Impressionar?
+        </h3>
+        <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-8">
+          Vamos conversar sobre como a <span className="font-semibold text-fire">FireDominios</span> pode construir a solução digital ideal para o seu negócio. Agende uma conversa sem compromisso.
         </p>
         <a
           href="https://wa.me/5599999999999?text=Olá,%20quero%20receber%20uma%20análise%20gratuita%20do%20meu%20site!"
