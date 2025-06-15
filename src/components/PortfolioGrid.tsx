@@ -51,6 +51,12 @@ const PortfolioGrid = () => (
       <h2 className="font-playfair text-3xl md:text-4xl font-bold text-center mb-12 text-fire-dark">
         Nosso Portfólio
       </h2>
+      <h3 className="text-xl md:text-2xl font-semibold text-center text-gray-800 mb-3">
+        Projetos que transformam presença digital em resultados de negócio.
+      </h3>
+      <p className="text-base md:text-lg text-center text-gray-700 mb-10 max-w-2xl mx-auto">
+        Navegue por nossas soluções e descubra como posicionamos marcas como a sua na vanguarda do mercado digital. Cada site que criamos, seja em WordPress de alta performance ou codificado sob medida, é uma ferramenta para o seu crescimento.
+      </p>
 
       {/* Seção WordPress */}
       <div>
