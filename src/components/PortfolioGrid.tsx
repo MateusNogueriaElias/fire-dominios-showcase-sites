@@ -97,29 +97,26 @@ const PortfolioGrid = () => (
             target="_blank"
             rel="noopener noreferrer"
             className="
-              w-full
+              w-full 
               flex items-center justify-center
               px-0 xs:px-4
               py-3
-              rounded-full bg-[#FF6F00] 
-              font-bold text-white text-[17px] xs:text-lg
+              rounded-full
+              bg-[#FF6F00] 
+              font-bold text-white text-lg xs:text-lg text-center
               shadow-lg hover:bg-[#d45900] transition
               min-h-[50px]
               active:scale-[0.98]
-              gap-3
               border-0
               outline-none
               focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF6F00]
+              select-none
             "
             style={{ minWidth: 0, boxShadow: "0 4px 18px 0 #fc562b33" }}
           >
-            <span className="w-full text-center block">Receber Análise Gratuita</span>
-            <Clock 
-              className="ml-2 shrink-0"
-              size={23}
-              color="#fff"
-              strokeWidth={2.3}
-            />
+            <span className="w-full block text-center leading-tight">
+              Receber Análise<br className="sm:hidden" /> Gratuita
+            </span>
           </a>
         </div>
       </div>
