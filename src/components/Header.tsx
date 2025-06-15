@@ -27,7 +27,8 @@ const Header = () => (
           alt="Logo Fire Domínios"
           className="w-10 h-10 object-contain"
         />
-        <span className="hidden xs:inline font-extrabold">
+        {/* Sempre visível, inclusive no mobile */}
+        <span className="font-extrabold">
           <span className="text-fire">Fire</span>{" "}
           <span className="text-[#FF6F00]">Domínios</span>
         </span>
