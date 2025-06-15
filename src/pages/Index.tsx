@@ -1,4 +1,5 @@
 
+import DynamicNetworkBackground from "../components/DynamicNetworkBackground";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
@@ -7,10 +8,12 @@ import Stats from "../components/Stats";
 
 const Index = () => {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-white relative">
+      {/* Fundo dinâmico sempre ativo */}
+      <DynamicNetworkBackground />
       <Header />
       <FloatingWhatsapp />
-      <main className="pt-24">
+      <main className="pt-24 relative z-10">
         <Hero />
         <Stats />
         <PortfolioGrid />
