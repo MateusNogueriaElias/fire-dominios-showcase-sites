@@ -70,7 +70,7 @@ const PortfolioGrid = () => (
       {/* Seção WordPress */}
       <div>
         <h3 className="text-2xl font-bold text-gray-800 mb-6 mt-10 text-center">Plataforma de Alta Performance (WordPress)</h3>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {wpSites.map((site) => (
             <SiteCard key={site.title} {...site} />
           ))}
