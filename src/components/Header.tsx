@@ -5,12 +5,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#portfolio", label: "Portfólio" },
-  {
-    href: "https://firedominios.com/",
-    label: "Site",
-    target: "_blank",
-    rel: "noopener noreferrer",
-  },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -41,60 +35,59 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-20 border-b border-gray-100 shadow-sm transition-all duration-500 ${
-      isScrolled ? 'bg-white/95 backdrop-blur py-2' : 'bg-white/95 backdrop-blur py-3 xs:py-4'
+    <header className={`fixed top-0 left-0 w-full z-20 bg-white transition-all duration-300 ${
+      isScrolled ? 'shadow-sm' : ''
     }`}>
-      <nav className="container mx-auto flex items-center justify-between px-2 md:px-6">
-        {/* Logo + título - sempre visível */}
+      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo */}
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-2 font-poppins text-xl xs:text-2xl font-bold tracking-tight text-fire focus:outline-none focus-visible:ring-2 focus-visible:ring-fire hover:scale-105 transition-transform duration-300 group"
+          className="flex items-center gap-3 group"
           aria-label="Página inicial"
-          tabIndex={0}
         >
-          <div className="relative">
-            <img
-              src="/lovable-uploads/6e6349dd-0d71-47aa-a2d8-879e372772be.png"
-              alt="Logo Fire Domínios"
-              className="w-9 xs:w-10 h-9 xs:h-10 object-contain transition-transform duration-200 group-hover:scale-110"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-fire to-[#FF6F00] opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
+          <img
+            src="/lovable-uploads/6e6349dd-0d71-47aa-a2d8-879e372772be.png"
+            alt="Logo Fire Domínios"
+            className="w-8 h-8 object-contain"
+            loading="eager"
+          />
+          <div className="flex flex-col">
+            <span className="text-xl font-bold text-fire">Fire Domínios</span>
+            <span className="text-xs text-gray-500">Digital Excellence</span>
           </div>
-          <span className="font-extrabold leading-tight">
-            <span className="text-fire">Fire</span>{" "}
-            <span className="text-[#FF6F00]">Domínios</span>
-          </span>
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 lg:gap-8 text-[15px] md:text-base font-medium text-[#333] font-poppins">
-          {navLinks.map((link, index) => (
-            <li key={link.label}>
-              {link.target ? (
-                <a
-                  href={link.href}
-                  className="hover:text-fire transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fire px-4 py-2 rounded-full hover:bg-orange-50 relative group"
-                  target={link.target}
-                  rel={link.rel}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-fire to-[#FF6F00] transition-all duration-300 w-0 group-hover:w-8"></span>
-                </a>
-              ) : (
-                <button
-                  onClick={() => handleNavClick(link.href)}
-                  className="hover:text-fire transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fire px-4 py-2 rounded-full hover:bg-orange-50 relative group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-fire to-[#FF6F00] transition-all duration-300 w-0 group-hover:w-8"></span>
-                </button>
-              )}
-            </li>
+        <div className="hidden md:flex items-center gap-8">
+          <button
+            onClick={scrollToTop}
+            className="text-fire font-medium hover:text-fire/80 transition-colors relative"
+          >
+            Home
+            <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-fire"></div>
+          </button>
+          
+          <span className="text-gray-600 font-medium">Serviços</span>
+          
+          {navLinks.map((link) => (
+            <button
+              key={link.label}
+              onClick={() => handleNavClick(link.href)}
+              className="text-gray-600 font-medium hover:text-fire transition-colors"
+            >
+              {link.label}
+            </button>
           ))}
-        </ul>
+          
+          <span className="text-gray-600 font-medium">Sobre</span>
+          
+          <button 
+            onClick={() => handleNavClick('#contato')}
+            className="bg-fire text-white px-6 py-2 rounded-full font-medium hover:bg-fire/90 transition-colors"
+          >
+            Contato
+          </button>
+        </div>
 
         {/* Mobile menu trigger */}
         <div className="flex md:hidden">
@@ -102,56 +95,50 @@ const Header = () => {
             <SheetTrigger asChild>
               <button
                 aria-label="Abrir menu"
-                className="p-2 xs:p-2.5 rounded-full text-fire-dark hover:bg-orange-50 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fire hover:text-fire"
-                tabIndex={0}
-                style={{ minWidth: 44, minHeight: 44, touchAction: "manipulation" }}
+                className="p-2 rounded-full text-fire hover:bg-orange-50 transition-colors"
               >
-                <Menu size={27} />
+                <Menu size={24} />
               </button>
             </SheetTrigger>
-            <SheetContent
-              side="left"
-              className="bg-white w-[80vw] max-w-xs flex flex-col p-0 shadow-2xl"
-            >
-              <div className="flex items-center gap-2 px-4 py-5 border-b">
+            <SheetContent side="right" className="bg-white w-[300px]">
+              <div className="flex items-center gap-2 mb-8">
                 <img
                   src="/lovable-uploads/6e6349dd-0d71-47aa-a2d8-879e372772be.png"
                   alt="Logo Fire Domínios"
-                  className="w-8 h-8 object-contain"
-                  loading="eager"
+                  className="w-6 h-6 object-contain"
                 />
-                <span className="text-fire font-extrabold text-xl leading-tight">
-                  Fire
-                </span>{" "}
-                <span className="text-[#FF6F00] font-extrabold text-xl leading-tight">
-                  Domínios
-                </span>
+                <span className="text-fire font-bold">Fire Domínios</span>
               </div>
-              <ul className="flex flex-col gap-1 px-5 py-8 text-base xs:text-lg font-medium font-poppins text-[#333]">
-                {navLinks.map((link, index) => (
-                  <li key={link.label}>
-                    {link.target ? (
-                      <a
-                        href={link.href}
-                        className="block py-3 px-4 rounded-xl hover:bg-orange-50 hover:text-fire transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fire"
-                        style={{ minWidth: 44, minHeight: 44, display: "block", animationDelay: `${index * 100}ms` }}
-                        target={link.target}
-                        rel={link.rel}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <button
-                        onClick={() => handleNavClick(link.href)}
-                        className="block w-full text-left py-3 px-4 rounded-xl hover:bg-orange-50 hover:text-fire transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fire"
-                        style={{ minWidth: 44, minHeight: 44, animationDelay: `${index * 100}ms` }}
-                      >
-                        {link.label}
-                      </button>
-                    )}
-                  </li>
+              
+              <div className="flex flex-col gap-4">
+                <button
+                  onClick={scrollToTop}
+                  className="text-left py-3 text-fire font-medium"
+                >
+                  Home
+                </button>
+                
+                <span className="py-3 text-gray-600 font-medium">Serviços</span>
+                
+                {navLinks.map((link) => (
+                  <button
+                    key={link.label}
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-left py-3 text-gray-600 font-medium hover:text-fire transition-colors"
+                  >
+                    {link.label}
+                  </button>
                 ))}
-              </ul>
+                
+                <span className="py-3 text-gray-600 font-medium">Sobre</span>
+                
+                <button 
+                  onClick={() => handleNavClick('#contato')}
+                  className="bg-fire text-white px-6 py-3 rounded-full font-medium hover:bg-fire/90 transition-colors mt-4"
+                >
+                  Contato
+                </button>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
