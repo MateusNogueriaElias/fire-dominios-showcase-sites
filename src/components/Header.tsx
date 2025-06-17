@@ -5,8 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#portfolio", label: "Portfólio" },
-  { href: "#sites", label: "Sites" },
-  { href: "#contato", label: "Contato" },
+  { href: "https://firedominios.com", label: "Sites", external: true },
 ];
 
 const Header = () => {
@@ -26,8 +25,10 @@ const Header = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleNavClick = (href: string) => {
-    if (href.startsWith('#')) {
+  const handleNavClick = (href: string, external?: boolean) => {
+    if (external) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    } else if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -63,7 +64,7 @@ const Header = () => {
           {navLinks.map((link) => (
             <button
               key={link.label}
-              onClick={() => handleNavClick(link.href)}
+              onClick={() => handleNavClick(link.href, link.external)}
               className="text-gray-600 font-medium hover:text-fire transition-colors"
             >
               {link.label}
@@ -97,7 +98,7 @@ const Header = () => {
                 {navLinks.map((link) => (
                   <button
                     key={link.label}
-                    onClick={() => handleNavClick(link.href)}
+                    onClick={() => handleNavClick(link.href, link.external)}
                     className="text-left py-3 text-gray-600 font-medium hover:text-fire transition-colors"
                   >
                     {link.label}

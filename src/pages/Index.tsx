@@ -2,7 +2,6 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import PortfolioGrid from "../components/PortfolioGrid";
-import SitesSection from "../components/SitesSection";
 import DynamicParticlesBackground from "../components/DynamicParticlesBackground";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
 
@@ -14,7 +13,6 @@ const Index = () => {
       <FloatingWhatsapp />
       <main className="pt-24">
         <Hero />
-        <SitesSection />
         <PortfolioGrid />
       </main>
     </div>
