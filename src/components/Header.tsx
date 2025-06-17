@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#portfolio", label: "Portfólio" },
+  { href: "#sites", label: "Sites" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -17,7 +18,7 @@ const Header = () => {
       setIsScrolled(currentScrollY > 20);
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -38,8 +39,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 w-full z-20 bg-white transition-all duration-300 ${
       isScrolled ? 'shadow-sm' : ''
     }`}>
-      <nav className="container mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
+      <nav className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
         <button
           onClick={scrollToTop}
           className="flex items-center gap-3 group"
@@ -50,6 +50,8 @@ const Header = () => {
             alt="Logo Fire Domínios"
             className="w-8 h-8 object-contain"
             loading="eager"
+            width="32"
+            height="32"
           />
           <div className="flex flex-col">
             <span className="text-xl font-bold text-fire">Fire Domínios</span>
@@ -57,18 +59,7 @@ const Header = () => {
           </div>
         </button>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <button
-            onClick={scrollToTop}
-            className="text-fire font-medium hover:text-fire/80 transition-colors relative"
-          >
-            Home
-            <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-fire"></div>
-          </button>
-          
-          <span className="text-gray-600 font-medium">Serviços</span>
-          
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -78,18 +69,8 @@ const Header = () => {
               {link.label}
             </button>
           ))}
-          
-          <span className="text-gray-600 font-medium">Sobre</span>
-          
-          <button 
-            onClick={() => handleNavClick('#contato')}
-            className="bg-fire text-white px-6 py-2 rounded-full font-medium hover:bg-fire/90 transition-colors"
-          >
-            Contato
-          </button>
         </div>
 
-        {/* Mobile menu trigger */}
         <div className="flex md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -106,20 +87,13 @@ const Header = () => {
                   src="/lovable-uploads/6e6349dd-0d71-47aa-a2d8-879e372772be.png"
                   alt="Logo Fire Domínios"
                   className="w-6 h-6 object-contain"
+                  width="24"
+                  height="24"
                 />
                 <span className="text-fire font-bold">Fire Domínios</span>
               </div>
               
               <div className="flex flex-col gap-4">
-                <button
-                  onClick={scrollToTop}
-                  className="text-left py-3 text-fire font-medium"
-                >
-                  Home
-                </button>
-                
-                <span className="py-3 text-gray-600 font-medium">Serviços</span>
-                
                 {navLinks.map((link) => (
                   <button
                     key={link.label}
@@ -129,15 +103,6 @@ const Header = () => {
                     {link.label}
                   </button>
                 ))}
-                
-                <span className="py-3 text-gray-600 font-medium">Sobre</span>
-                
-                <button 
-                  onClick={() => handleNavClick('#contato')}
-                  className="bg-fire text-white px-6 py-3 rounded-full font-medium hover:bg-fire/90 transition-colors mt-4"
-                >
-                  Contato
-                </button>
               </div>
             </SheetContent>
           </Sheet>
