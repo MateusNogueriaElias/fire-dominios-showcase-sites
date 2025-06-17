@@ -9,7 +9,7 @@ const Hero = () => {
       className="
         relative pt-28 md:pt-36 pb-14 md:pb-20 px-3 md:px-4 w-full flex flex-col items-center justify-center text-center
         border-y border-orange-200/60 overflow-hidden shadow-md
-      "
+       "
       // Gradiente diagonal premium de #e53b01 a #feb800
       style={{
         minHeight: 360,
